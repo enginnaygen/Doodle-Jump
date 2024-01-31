@@ -25,51 +25,51 @@ public class karakterKodu : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
         if (PlayerPrefs.HasKey("rekor"))
-        { 
-          rekor = PlayerPrefs.GetInt("rekor");
+        {
+            rekor = PlayerPrefs.GetInt("rekor");
             rekorYazýsý.text = "rekor: " + rekor;
-        
+
         }
         else
         { rekor = 0; }
     }
 
-   /* private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (rb.velocity.y<=0 &&collision.gameObject.tag=="ultrazýplatýcý")
-        {
-            rb.velocity = new Vector2(0, ultrazýplama);
-            skor += 20;
+     private void OnCollisionEnter2D(Collision2D collision)
+     {
+         if (rb.velocity.y<=0 &&collision.gameObject.tag=="ultrazýplatýcý")
+         {
+             rb.velocity = new Vector2(0, ultrazýplama);
+             skor += 20;
 
-            if(rekor<skor)
-            {
-                
-                    rekor = skor;
-                    PlayerPrefs.SetInt("rekor", rekor);
-            }
-        }
+             if(rekor<skor)
+             {
 
-        if (collision.relativeVelocity.y >= 0 && collision.gameObject.tag == "zemin" || collision.gameObject.tag == "zemin2" || collision.gameObject.tag == "zemin3" || collision.gameObject.tag == "zemin4")
-        {
-            rb.velocity = new Vector2(0, zýplamaHýzý);
-            skor += 5;
-            
+                     rekor = skor;
+                     PlayerPrefs.SetInt("rekor", rekor);
+             }
+         }
 
-            if(rekor<skor)
-            {
-                rekor = skor;
-                PlayerPrefs.SetInt("rekor", rekor);
-            }
+         if (collision.relativeVelocity.y >= 0 && collision.gameObject.tag == "zemin" || collision.gameObject.tag == "zemin2" || collision.gameObject.tag == "zemin3" || collision.gameObject.tag == "zemin4")
+         {
+             rb.velocity = new Vector2(0, zýplamaHýzý);
+             skor += 5;
 
-        }
 
-        if(collision.gameObject.tag =="yenidenbaslatýcý")
-        {
-            SceneManager.LoadScene(0);
-        }
-    }*/
+             if(rekor<skor)
+             {
+                 rekor = skor;
+                 PlayerPrefs.SetInt("rekor", rekor);
+             }
 
-    /*private void Update()
+         }
+
+         if(collision.gameObject.tag =="yenidenbaslatýcý")
+         {
+             SceneManager.LoadScene(0);
+         }
+     }
+
+    private void Update()
     {
         hareket = Input.GetAxisRaw("Horizontal");
         //rb.velocity = new Vector2(harekethýzý * hareket * Time.deltaTime, rb.velocity.y);
@@ -89,23 +89,15 @@ public class karakterKodu : MonoBehaviour
 
         
         
-    }*/
-    private void FixedUpdate()
+    }
+   /* private void FixedUpdate()
     {
         RaycastHit2D hit2D = Physics2D.Raycast(foot.position, Vector2.down, distance);
         //RaycastHit2D hit12D = Physics2D.Raycast(foots[1].position, Vector2.down, distance);
-       // RaycastHit2D hit22D = Physics2D.Raycast(foots[2].position, Vector2.down, distance);
+        // RaycastHit2D hit22D = Physics2D.Raycast(foots[2].position, Vector2.down, distance);
 
 
         Debug.DrawRay(foot.position, Vector2.down * distance, Color.green);
-        if (hit2D.collider != null && rb.velocity.y<=0)
-        {
-            rb.velocity = new Vector2(0, zýplamaHýzý);
-            skor += 5;
-
-
-        }
-       /* Debug.DrawRay(foots[1].position, Vector2.down * distance, Color.green);
         if (hit2D.collider != null && rb.velocity.y <= 0)
         {
             rb.velocity = new Vector2(0, zýplamaHýzý);
@@ -113,24 +105,32 @@ public class karakterKodu : MonoBehaviour
 
 
         }
-        Debug.DrawRay(foots[2].position, Vector2.down * distance, Color.green);
-        if (hit2D.collider != null && rb.velocity.y <= 0)
-        {
-            rb.velocity = new Vector2(0, zýplamaHýzý);
-            skor += 5;
+        /* Debug.DrawRay(foots[1].position, Vector2.down * distance, Color.green);
+         if (hit2D.collider != null && rb.velocity.y <= 0)
+         {
+             rb.velocity = new Vector2(0, zýplamaHýzý);
+             skor += 5;
 
 
-        }*/
+         }
+         Debug.DrawRay(foots[2].position, Vector2.down * distance, Color.green);
+         if (hit2D.collider != null && rb.velocity.y <= 0)
+         {
+             rb.velocity = new Vector2(0, zýplamaHýzý);
+             skor += 5;
+
+    a
+         }*/
 
 
-        hareket = Input.GetAxisRaw("Horizontal");
+        /*hareket = Input.GetAxisRaw("Horizontal");
         //rb.velocity = new Vector2(harekethýzý * hareket * Time.deltaTime, rb.velocity.y);
 
         rb.transform.Translate(hareket * harekethýzý * Time.deltaTime, 0, 0);
 
         if (hareket < 0)
         {
-            this.gameObject.transform.localScale = new Vector2(-1,1);
+            this.gameObject.transform.localScale = new Vector2(-1, 1);
             //sr.flipX = true;
         }
         else if (hareket > 0)
@@ -139,7 +139,9 @@ public class karakterKodu : MonoBehaviour
 
             //sr.flipX = false;
         }
-        if (hit2D.collider.gameObject.tag == "temizleyici")
-        { SceneManager.LoadScene(0); }
-    }
+        //if (hit2D.collider.gameObject.tag == "temizleyici")
+        //{ SceneManager.LoadScene(0); }
+    }*/
+
+
 }

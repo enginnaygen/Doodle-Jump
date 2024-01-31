@@ -44,4 +44,9 @@ public class Temizleyici : MonoBehaviour
         }*/
 
     }
+
+    /*private void FixedUpdate()
+    {
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.up*2;
+    }*/
 }
